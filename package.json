@@ -23,6 +23,11 @@
     "babel-core": "^6.25.0",
     "babel-loader": "^6.4.1",
     "babel-preset-latest": "^6.0.0",
-    "babel-preset-react": "^6.24.1"
+    "babel-preset-react": "^6.24.1",
+    "react-redux": "4.0.0",
+    "react-router": "^3.0.0",
+    "react-svg": "^2.1.21",
+    "redux": "v3.0.2",
+    "redux-devtools": "^3.0.2"
   }
 }
