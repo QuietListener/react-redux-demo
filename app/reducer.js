@@ -3,7 +3,7 @@
  * (previousState, action) => newState
  */
 
-import { VisibilityFilters,SET_VISIBILITY_FILTER,ADD_TODO,TOGGLE_TODO } from './actions'
+import { VisibilityFilters,SET_VISIBILITY_FILTER,ADD_TODO,TOGGLE_TODO, INCREMENT_COUNTER,RECEIVE_POSTS } from './actions'
 
 const initialState={
     visibilityFilter:VisibilityFilters.SHOW_ALL,
@@ -46,6 +46,21 @@ function visibilityFilter(state = VisibilityFilters.SHOW_ALL, action={})
 
     }
 }
+function posts(state,action={})
+{
+    switch(action.type)
+    {
+        //case INCREMENT_COUNTER:
+        //    console.log(INCREMENT_COUNTER,"111111")
+        //    return action.posts
+        case RECEIVE_POSTS:
+            console.log(RECEIVE_POSTS,"111111")
+            return action.posts
+        default:
+            return state
+
+    }
+}
 
 /**
  * 合成一个reducer
@@ -55,7 +70,8 @@ function todoApp(state={},action={})
 {
     return {
         visibilityFilter:visibilityFilter(state.visibilityFilter,action),
-        todos:todos_(state.todos, action)
+        todos:todos_(state.todos, action),
+        ppp:posts(state.posts,action)
     }
 }
 
